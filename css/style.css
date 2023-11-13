@@ -1,9 +1,18 @@
 body{background-color:grey;}
 
+.gallery{
+    background: blue;
+    width: 10%;
+    height: 20rem;
+}
+
+.foto-gallery {
+    border: 1px solid black;
+    min-height: calc(100% / 6);
+}
 .wrapper-carousel{
-    height: 20em;
+    height: 20rem;
     width: 70%;
-    margin:15% auto;
     display: flex;
     position: relative;
 }
@@ -47,3 +56,5 @@ button{
     right: 0;
 }
 .invisible{display: none;}
+
+.global-container{display: flex;}

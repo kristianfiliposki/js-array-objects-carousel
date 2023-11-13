@@ -1,8 +1,6 @@
 /* scrivo le mie variabili */
 const buttonLeft=document.getElementById("btn-left");
 const buttonRight=document.getElementById("btn-right");
-
-
 const images = [
     {
         image: "./img 4/01.webp",
@@ -30,33 +28,71 @@ const images = [
 let container=document.getElementById("carousel")
 
 
-    /* per ognuno degli elementi presenti nelle images,sposto i dati nell'HTML */
-    let i=0;
-    while ( i < images.length) {
+/* per ognuno degli elementi presenti nelle images,sposto i dati nell'HTML */
+let i=0;
+while ( i < images.length) {
     let immagine = images[i];
     container.innerHTML+= `
-        <div class="card">
-        <div class="foto-wrapper">
-            <img src="${images[i].image}" class="foto">
-        </div>
-            <div class="text-foto">${images[i].title}</div>
-            <p class="text-foto">${images[i].text}</p>
-        </div>`
-        i++;
-    }    
+    <div class="card">
+    <div class="foto-wrapper">
+    <img src="${images[i].image}" class="foto">
+    </div>
+    <div class="text-foto">${images[i].title}</div>
+    <p class="text-foto">${images[i].text}</p>
+    </div>`
+    i++;
+    
+}    
+/* ******************* */
+
+/* voglio svotare l'html */
 
 
 
-    /*     for (let i=0; i < images.lengthi;i++) {
-        let immagine = images[i];
-        container.innerHTML= 
-        `
-        <div class="card">
-            <div class="foto-wrapper">
-            <img src="${immagine.image}" class="foto">
-            </div>
-            <div class="text-foto">${immagine.title}</div>
-            <p class="text-foto">${immagine.text}</p>
-        </div>
-        `;
-    }     */
+/* arrow function */
+/* let prova=() =>console.log("funzione eseguita");
+*/
+/* ()=>"funzione..."*/
+/* arrow function prende scoop dal padre */
+
+let foto0 =0;
+let immagini= document.getElementsByClassName("card");
+
+for (let i = 1; i < immagini.length; i++) {
+    immagini[i].classList.add("invisible");
+
+}
+
+let finalfoto=immagini.length -1;
+pulsanti();
+
+
+function pulsanti(){
+    
+    
+    buttonRight.addEventListener("click",function(){
+        if(foto0 < finalfoto){
+            immagini[foto0].classList.add("invisible");
+            foto0++
+            immagini[foto0].classList.remove("invisible");
+        }
+        else{
+            immagini[foto0].classList.add("invisible");
+            foto0 = 0;
+            immagini[foto0].classList.remove("invisible");
+        }
+      
+        
+    })
+    
+    buttonLeft.addEventListener("click", function () {
+        if(foto0 > 0){
+            immagini[foto0].classList.add("invisible");
+            foto0++
+            immagini[foto0].classList.remove("invisible");
+        }
+    });
+}
+
+
+
