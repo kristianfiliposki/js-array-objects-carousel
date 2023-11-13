@@ -1,3 +1,8 @@
+/* scrivo le mie variabili */
+const buttonLeft=document.getElementById("btn-left");
+const buttonRight=document.getElementById("btn-right");
+
+
 const images = [
     {
         image: "./img 4/01.webp",
@@ -23,23 +28,35 @@ const images = [
 ];
 
 let container=document.getElementById("carousel")
-/* per ognuno degli elementi presenti nelle images,sposto i dati nell'HTML */
-for (let i = 0; i < images.length; i++) {
+
+
+    /* per ognuno degli elementi presenti nelle images,sposto i dati nell'HTML */
+    let i=0;
+    while ( i < images.length) {
     let immagine = images[i];
-    container.innerHTML+= 
-    `
-    <div class="card">
+    container.innerHTML+= `
+        <div class="card">
         <div class="foto-wrapper">
-        <img src="${immagine.image}" class="foto">
+            <img src="${images[i].image}" class="foto">
         </div>
-        <div class="text-foto">${immagine.title}</div>
-        <p class="text-foto">${immagine.text}</p>
-    </div>
-    `
-}
+            <div class="text-foto">${images[i].title}</div>
+            <p class="text-foto">${images[i].text}</p>
+        </div>`
+        i++;
+    }    
 
 
 
-
-
-    
+    /*     for (let i=0; i < images.lengthi;i++) {
+        let immagine = images[i];
+        container.innerHTML= 
+        `
+        <div class="card">
+            <div class="foto-wrapper">
+            <img src="${immagine.image}" class="foto">
+            </div>
+            <div class="text-foto">${immagine.title}</div>
+            <p class="text-foto">${immagine.text}</p>
+        </div>
+        `;
+    }     */
