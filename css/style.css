@@ -1,17 +1,20 @@
-body{background-color:grey;}
+body{
+    background-color:grey;
 
-.gallery{
+}
+
+#gallery{
     background: blue;
     width: 10%;
-    height: 20rem;
+    height: 100%;
 }
 
 .foto-gallery {
     border: 1px solid black;
-    min-height: calc(100% / 6);
+    height: calc(100% / 5);
 }
 .wrapper-carousel{
-    height: 20rem;
+    height: 100%;
     width: 70%;
     display: flex;
     position: relative;
@@ -43,6 +46,7 @@ button{
 .foto{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 .text-foto{
     color: white;
@@ -57,4 +61,10 @@ button{
 }
 .invisible{display: none;}
 
-.global-container{display: flex;}
+.global-container{
+    height: 20em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+}
